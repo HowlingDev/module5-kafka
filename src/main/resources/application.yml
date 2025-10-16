@@ -1,0 +1,11 @@
+server:
+  port: 8000
+spring:
+  mail:
+    host: smtp.example.com
+    port: 587
+    username: user@example.com
+    password: example_password1234
+    properties:
+      mail.smtp.auth: true
+      mail.smtp.starttls.enable: true
