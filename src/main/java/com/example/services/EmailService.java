@@ -33,6 +33,7 @@ public class EmailService {
             javaMailSender.send(simpleMailMessage);
             return "Сообщение успешно отправлено!";
         } catch (Exception e) {
+            e.printStackTrace();  //было для отладки, не стал убирать
             return "Произошла ошибка при отправке сообщения.";
         }
     }

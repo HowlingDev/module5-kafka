@@ -2,10 +2,20 @@ server:
   port: 8000
 spring:
   mail:
-    host: smtp.example.com
+    host: smtp.gmail.com
     port: 587
-    username: user@example.com
-    password: example_password1234
-    properties:
-      mail.smtp.auth: true
-      mail.smtp.starttls.enable: true
+    username: example@gmail.com
+    password: example_password
+    protocol: smtp
+    tls: true
+    properties.mail.smtp:
+      auth: true
+      starttls.enable: true
+      ssl.trust: smtp.gmail.com
+  kafka:
+    consumer:
+      bootstrap-servers: localhost:9092
+      group-id: email-notifications
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
